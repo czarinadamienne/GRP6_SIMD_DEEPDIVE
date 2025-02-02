@@ -115,7 +115,8 @@ put project desc and specs here
       ![image](https://github.com/user-attachments/assets/7516ce33-e1ef-45b7-a30b-da0773a8a6cc)
 
 ### II. Comparative table of execution time and analysis of the performance of different kernels
-<center>Debug average times according to vector size </center>
+
+Debug average execution times
 
 | Vector size | C Program      | x86-64 Program | SIMD XMM Register | SIMD YMM Register |
 | ----------- | -------------- | -------------- | ----------------- | ----------------- |
@@ -123,6 +124,23 @@ put project desc and specs here
 | 1 << 26     | 165.644127 ms  | 51.342810 ms   | 41.490890 ms      | 40.654257 ms      |
 | 1 << 28     | 2044.198467 ms | 183.021090 ms  | 143.115577 ms     | 138.660233 ms     |
 <br/>
+Release average execution times
+
+| Vector size | C Program      | x86-64 Program | SIMD XMM Register | SIMD YMM Register |
+| ----------- | -------------- | -------------- | ----------------- | ----------------- |
+| 1 << 20     | 1.796643 ms    | 1.113203 ms    | 1.058397 ms       | 0.742370 ms       |
+| 1 << 26     | 51.196957  ms  | 50.529460 ms   | 38.223140 ms      | 36.910040 ms      |
+| 1 << 28     | 167.466487 ms  | 203.354290 ms  | 152.361333 ms     | 139.470703 ms     |
+<br/>
+Debug average execution times
+
+| Vector size | C Program      | x86-64 Program | SIMD XMM Register | SIMD YMM Register |
+| ----------- | -------------- | -------------- | ----------------- | ----------------- |
+| 1 << 20     | 2.713340 ms    | 1.195887 ms    | 2.020687 ms       | 1.568683 ms       |
+| 1 << 26     | 165.644127 ms  | 51.342810 ms   | 41.490890 ms      | 40.654257 ms      |
+| 1 << 28     | 2044.198467 ms | 183.021090 ms  | 143.115577 ms     | 138.660233 ms     |
+
+
 - **Why is it faster?**
 
 ### III. C Program 
