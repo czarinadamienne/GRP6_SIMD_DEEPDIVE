@@ -33,7 +33,7 @@ put project desc and specs here
     - 1 << 28 (2^28)
       ![image](https://github.com/user-attachments/assets/e15564ef-cda6-4922-b29e-1b2d356d0920)
       
-  - SIMD XMM PROGRAM
+  - SIMD XMM REGISTER
     - 1 << 20 (2^20)
       ![image](https://github.com/user-attachments/assets/e4795fb5-b3c4-4646-b237-54f5d65cb12f)
 
@@ -43,7 +43,7 @@ put project desc and specs here
     - 1 << 28 (2^28)
       ![image](https://github.com/user-attachments/assets/d96e45df-6779-4ac9-b1b9-1969fc75a909)
   
-  - SIMD YMM PROGRAM
+  - SIMD YMM REGISTER
     - 1 << 20 (2^20)
       ![image](https://github.com/user-attachments/assets/80bae7b1-7b43-4fd2-ac7d-9c967a463a94)
 
@@ -84,7 +84,7 @@ put project desc and specs here
     - 1 << 28 (2^28)
       ![image](https://github.com/user-attachments/assets/3a9ebe38-e578-497d-b46e-793b1f17f0c7)
 
-  - SIMD XMM PROGRAM
+  - SIMD XMM REGISTER
     - 1 << 20 (2^20)
       ![image](https://github.com/user-attachments/assets/50c1d13d-7300-484b-a1dc-2f7f78de7419)
 
@@ -94,7 +94,7 @@ put project desc and specs here
     - 1 << 28 (2^28)
       ![image](https://github.com/user-attachments/assets/b03f4597-f6f6-43fb-9404-2826adff4bff)
 
-  - SIMD YMM PROGRAM
+  - SIMD YMM REGISTER
     - 1 << 20 (2^20)
       ![image](https://github.com/user-attachments/assets/4bac7558-782d-47a9-b2dc-d4d8e5fa8fcb)
 
@@ -114,50 +114,30 @@ put project desc and specs here
     - 1 << 28 (2^28)<br/>
       ![image](https://github.com/user-attachments/assets/7516ce33-e1ef-45b7-a30b-da0773a8a6cc)
 
-### stuff
+### II. Comparative table of execution time and analysis of the performance of different kernels
+<center>Debug average times according to vector size </center>
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+| Vector size | C Program      | x86-64 Program | SIMD XMM Register | SIMD YMM Register |
+| ----------- | -------------- | -------------- | ----------------- | ----------------- |
+| 1 << 20     | 2.713340 ms    | 1.195887 ms    | 2.020687 ms       | 1.568683 ms       |
+| 1 << 26     | 165.644127 ms  | 51.342810 ms   | 41.490890 ms      | 40.654257 ms      |
+| 1 << 28     | 2044.198467 ms | 183.021090 ms  | 143.115577 ms     | 138.660233 ms     |
+<br/>
+- **Why is it faster?**
 
-### Executing program
+### III. C Program 
 
 * How to run the program
 * Step-by-step bullets
-```
-code blocks for commands
-```
 
-## Help
+### IV. x86-64 Program
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
-## Authors
+### V. SIMD XMM Program
 
-Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+### VI. SIMD YMM Register
 
-## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+### VII. Discussion
 
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
