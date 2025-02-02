@@ -160,6 +160,7 @@ Release speed factor
 - The implementation of the dot product in SIMD XMM and SIMD YMM required special consideration. This was the inclusion of being able to handle vector lengths that were not multiples of 4 and multiples of 8 for XMM and YMM respectively. Due to XMM handling 4 elements at a time and YMM handling 8 elements at a time, an issue may occur in which the remaining elements at the end of the vector may not be one of these respective multiples. To address this, additional branches were included to handle this test case in which the remaining elements would be handled using a regular x86-64. For SIMD XMM, the remaining elements could possibly range from 1-3 elements while SIMD YMM would range from 1-7 elements.
 
 ### III. C Program 
+- The project aims to test 4 different implementations of the dot product formula, namely in C, x86-64, SIMD XMM, and SIMD YMM. The functions for each implementation were called in one general C file where the execution times were benchmarked to see which performed the fastest set of computations. The vector sizes used were 2^20, 2^26, and 2^28. These numbers were used to test how well each implementation would work on an exponentially growing dataset.
 * Dot Product Computation <br/>
   ![image](https://github.com/user-attachments/assets/dc08c092-97ee-4ea5-99dc-320cf36b5a22)
   <br/>
@@ -175,13 +176,13 @@ Release speed factor
 
 
 ### IV. x86-64 Program
-
+- The x86-64 program computes for the dot product in a similar manner to the C program in which it processes one element at a time. However, the use of assembly allows for direct access memory registers which reduces the possible propagation delay that may be faced when using C as the source code's programming language. 
 
 ### V. SIMD XMM Program
-
+- The SIMD XMM program utilized instructions that would allow for the parallel computation of multiple elements for the dot product. This would allow for processing more elements per loop iteration. In this instance specifically, 4 elements would be processed for every loop iteration. Since the XMM registers can hold up to 128 bits, 4 elements of the data type int_32 may be processed per iteration (128 / 32 = 4). 
 
 ### VI. SIMD YMM Register
-
+- The SIMD YMM follows a similar implementation to the XMM version which leverages paralle computing for a more efficient processing of elements. The YMM register can hold up to 256 bits, which allows for more elements to be processed than the XMM register. Specifically, 8 elements of data type int_32 may be processed per loop iteration (256 / 32 = 8). 
 
 ### VII. Discussion
 - Certain challenges faced during the creation of the project was the setup of the stack and the proper use of instructions. The setup of the stack posed a problem at first due to a typo in the original program. This unintentional use of typos applied as well to the use instructions in which the use of certain instructions such as movdqu or vmovdqu were misspelled. This issue was addressed through proper retracing of code to ensure all instructions were properly typed. Another issue faced was the printing of garbage values when calling the assembly functions from C. This issue was addressed through fixing the popping and pushing of specific registers. Lastly, the issue of handling elements that were not multiples of 4 and 8 for the XMM and YMM registers posed a challenge. This issue was addressed through the use of additional branches to properly handle these elements to still ensure proper computation of the dot product. 
