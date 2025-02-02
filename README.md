@@ -1,25 +1,20 @@
-<p style="text-align: center;">
-  <strong>CEPARCO - SIMD PROGRAMMING PROJECT</strong>  
-  <br>GROUP 6 (Alamay, Ang, Esteban, Herrera)
-</p>
-
 # Group 6 - Deep Dive: SIMD Programming
 
 put project desc and specs here
 
 ## Members
 
-Alamay, Carl Justine
-Ang, Czarina Damienne
-Esteban, Janina Angela
-Herrera, Diego Martin
+* Alamay, Carl Justine
+* Ang, Czarina Damienne
+* Esteban, Janina Angela
+* Herrera, Diego Martin
 
 ## Report
 
 ### I. Screenshots of Program output with execution time
 1. DEBUG
    - C PROGRAM
-     - 1 << 20 (2^20)
+     - 1 << 20 (2^20)<br/>
        ![image](https://github.com/user-attachments/assets/e444ceb2-9f16-4f8c-9822-721c6ca4439c)
        
      - 1 << 26 (2^26)
@@ -59,13 +54,13 @@ Herrera, Diego Martin
       ![image](https://github.com/user-attachments/assets/eb6d464b-f57f-4d19-a398-47b5a3159919)
     
   - AVERAGE TIMES
-    - 1 << 20 (2^20)
+    - 1 << 20 (2^20)<br/>
       ![image](https://github.com/user-attachments/assets/0e3efdd6-f4c9-48b5-b266-241078b9ebdf)
 
-    - 1 << 26 (2^26)
+    - 1 << 26 (2^26)<br/>
       ![image](https://github.com/user-attachments/assets/07a0bb18-37f4-41e1-8fd4-3a55855a53d8)
 
-    - 1 << 28 (2^28)
+    - 1 << 28 (2^28)<br/>
       ![image](https://github.com/user-attachments/assets/1d9af4b4-a6f0-4b74-88d9-fe907a658707)
 
 2. RELEASE
@@ -110,16 +105,16 @@ Herrera, Diego Martin
       ![image](https://github.com/user-attachments/assets/8834131d-80a1-4555-8b10-bd57973d41ea)
 
   - AVERAGE TIMES
-    - 1 << 20 (2^20)
+    - 1 << 20 (2^20)<br/>
       ![image](https://github.com/user-attachments/assets/151b406a-509e-486c-9c27-2f472c56424e)
 
-    - 1 << 26 (2^26)
+    - 1 << 26 (2^26)<br/>
       ![image](https://github.com/user-attachments/assets/adc90cbc-4580-4704-bb57-0635e7d3dd14)
 
-    - 1 << 28 (2^28)
+    - 1 << 28 (2^28)<br/>
       ![image](https://github.com/user-attachments/assets/7516ce33-e1ef-45b7-a30b-da0773a8a6cc)
 
-### 
+### stuff
 
 * How/where to download your program
 * Any modifications needed to be made to files/folders
