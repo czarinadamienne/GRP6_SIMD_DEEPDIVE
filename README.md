@@ -164,14 +164,15 @@ Release speed factor
 * Dot Product Computation <br/>
   ![image](https://github.com/user-attachments/assets/dc08c092-97ee-4ea5-99dc-320cf36b5a22)
   <br/>
-  Used a for loop that goes through each element of both vectors and multiplies the values of both vectors. The product is then added to sdot. This loops until it goes through all elements.
+  Used a for loop that goes through each element of both vectors and multiplies the values of both vectors. The product is then added to sdot. This loops until it goes through all elements.<br/>
 
 ![image](https://github.com/user-attachments/assets/fa3eb18e-5217-4367-8e41-45b9c698b724)
 
    Since the C program is the one that will be calling all kernels and it is required to run it at least 30 times, each function that calls the kernel is enclosed in a for loop that calls the function, checks if the assembly language computed the dot product correctly, and records the execution time of that specific run. Sample code block is shown below.
 <br/>
-* Error Checking
+* Error Checking<br/>
   ![image](https://github.com/user-attachments/assets/62158dda-30f8-4a29-99cf-7b8a5ca12bd1)
+  <br/>
   The error checkers of each kernel is found in the c program. It compares the final dot product value of the kernel with the error checker's answer. If both are equal then it prints out that the program is correct, else it will print out that the program is incorrect.
 
 
