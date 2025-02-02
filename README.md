@@ -116,7 +116,7 @@ put project desc and specs here
 
 ### II. Comparative table of execution time and analysis of the performance of different kernels
 - A device with the following specs was used to run each implementation of the dot product formula.
-- ![5d663dbf-c72b-405b-bce6-a8d6706a2ae1](https://github.com/user-attachments/assets/d3342ce8-d38e-4319-863d-fbce980a0116)
+  ![image](https://github.com/user-attachments/assets/9adbb5ee-c325-4e36-899d-ead55b283cb5)
 
 Debug average execution times
 
@@ -165,23 +165,29 @@ Release speed factor
   ![image](https://github.com/user-attachments/assets/dc08c092-97ee-4ea5-99dc-320cf36b5a22)
   <br/>
   Used a for loop that goes through each element of both vectors and multiplies the values of both vectors. The product is then added to sdot. This loops until it goes through all elements.
-<br/>
-![image](https://github.com/user-attachments/assets/3890ad62-609e-4fb9-9cfa-b41d3a8f57e6)
+
+![image](https://github.com/user-attachments/assets/fa3eb18e-5217-4367-8e41-45b9c698b724)
+
    Since the C program is the one that will be calling all kernels and it is required to run it at least 30 times, each function that calls the kernel is enclosed in a for loop that calls the function, checks if the assembly language computed the dot product correctly, and records the execution time of that specific run. Sample code block is shown below.
 <br/>
 * Error Checking
-  ![image](https://github.com/user-attachments/assets/8d0c45ca-b4f8-47c0-9546-7bedfdd0cf19)
-  <br/>
+  ![image](https://github.com/user-attachments/assets/62158dda-30f8-4a29-99cf-7b8a5ca12bd1)
   The error checkers of each kernel is found in the c program. It compares the final dot product value of the kernel with the error checker's answer. If both are equal then it prints out that the program is correct, else it will print out that the program is incorrect.
 
 
 ### IV. x86-64 Program
+![image](https://github.com/user-attachments/assets/1ff57e9b-6d7e-4635-ad49-54e183f2fcd0)
+
 - The x86-64 program computes for the dot product in a similar manner to the C program in which it processes one element at a time. However, the use of assembly allows for direct access memory registers which reduces the possible propagation delay that may be faced when using C as the source code's programming language. 
 
 ### V. SIMD XMM Program
+![image](https://github.com/user-attachments/assets/8dba38ea-5342-4588-b07b-997e3b68e95a)
+
 - The SIMD XMM program utilized instructions that would allow for the parallel computation of multiple elements for the dot product. This would allow for processing more elements per loop iteration. In this instance specifically, 4 elements would be processed for every loop iteration. Since the XMM registers can hold up to 128 bits, 4 elements of the data type int_32 may be processed per iteration (128 / 32 = 4). 
 
 ### VI. SIMD YMM Register
+![image](https://github.com/user-attachments/assets/273e2ce8-017e-4096-ae41-1f959202313f)
+
 - The SIMD YMM follows a similar implementation to the XMM version which leverages paralle computing for a more efficient processing of elements. The YMM register can hold up to 256 bits, which allows for more elements to be processed than the XMM register. Specifically, 8 elements of data type int_32 may be processed per loop iteration (256 / 32 = 8). 
 
 ### VII. Discussion
