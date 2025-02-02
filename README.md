@@ -1,6 +1,6 @@
 # Group 6 - Deep Dive: SIMD Programming
 
-put project desc and specs here
+- The project aims to test 4 different implementations of the dot product formula, namely in C, x86-64, SIMD XMM, and SIMD YMM. The functions for each implementation were called in one general C file where the execution times were benchmarked to see which performed the fastest set of computations. The vector sizes used were 2^20, 2^26, and 2^28. These numbers were used to test how well each implementation would work on an exponentially growing dataset.
 
 ## Members
 
@@ -160,7 +160,6 @@ Release speed factor
 - The implementation of the dot product in SIMD XMM and SIMD YMM required special consideration. This was the inclusion of being able to handle vector lengths that were not multiples of 4 and multiples of 8 for XMM and YMM respectively. Due to XMM handling 4 elements at a time and YMM handling 8 elements at a time, an issue may occur in which the remaining elements at the end of the vector may not be one of these respective multiples. To address this, additional branches were included to handle this test case in which the remaining elements would be handled using a regular x86-64. For SIMD XMM, the remaining elements could possibly range from 1-3 elements while SIMD YMM would range from 1-7 elements.
 
 ### III. C Program 
-- The project aims to test 4 different implementations of the dot product formula, namely in C, x86-64, SIMD XMM, and SIMD YMM. The functions for each implementation were called in one general C file where the execution times were benchmarked to see which performed the fastest set of computations. The vector sizes used were 2^20, 2^26, and 2^28. These numbers were used to test how well each implementation would work on an exponentially growing dataset.
 * Dot Product Computation <br/>
   ![image](https://github.com/user-attachments/assets/dc08c092-97ee-4ea5-99dc-320cf36b5a22)
   <br/>
