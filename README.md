@@ -134,13 +134,21 @@ Release average execution times
 | 1 << 26     | 51.196957  ms  | 50.529460 ms   | 38.223140 ms      | 36.910040 ms      |
 | 1 << 28     | 167.466487 ms  | 203.354290 ms  | 152.361333 ms     | 139.470703 ms     |
 <br/>
-Debug average execution times
+Debug speed factor
 
 | Vector size | C Program      | x86-64 Program | SIMD XMM Register | SIMD YMM Register |
 | ----------- | -------------- | -------------- | ----------------- | ----------------- |
-| 1 << 20     | 2.713340 ms    | 1.195887 ms    | 2.020687 ms       | 1.568683 ms       |
-| 1 << 26     | 165.644127 ms  | 51.342810 ms   | 41.490890 ms      | 40.654257 ms      |
-| 1 << 28     | 2044.198467 ms | 183.021090 ms  | 143.115577 ms     | 138.660233 ms     |
+| 1 << 20     | 1x             | 2.27x          | 1.34x             | 1.73x             |
+| 1 << 26     | 1x             | 3.23x          | 3.99x             | 4.07x             |
+| 1 << 28     | 1x             | 11.17x         | 4.07x             | 14.74x            |
+<br/>
+Release speed factor
+
+| Vector size | C Program      | x86-64 Program | SIMD XMM Register | SIMD YMM Register |
+| ----------- | -------------- | -------------- | ----------------- | ----------------- |
+| 1 << 20     | 1x             | 1.61x          | 1.70x             | 2.42x             |
+| 1 << 26     | 1x             | 1.01x          | 1.34x             | 1.39x             |
+| 1 << 28     | 1x             | 0.82x          | 1.10x             | 1.20x             |
 
 - **How much faster?**
 - Looking at all test cases, the use of SIMD YMM came out to be the fastest in applying the dot product to a large dataset. At smaller vector lengths such as 2^20 the speed up factor is smaller in value with the execution times being close in value when comparing C to the assembly implementations of the dot product formula for both the debug and release mode of visual studio. When operating on a larger dataset such as 2^30, the speed up factor is much more noticeable. With debug mode, the speed up factors for x86-64, SIMD XMM, and SIMD YMM were 11.17, 14.28, and 14.74. Compared to the smaller vector length, the speed up factor grows on a larger scale for larger vector lengths when calling the assembly implementations of the dot product formula. There was an unexpected behavior in release mode where the x86-64 implementation was slower than the C implementation. This may have been due to the release mode of visual studio auto-vectorizing which may have significantly sped up the C program. Additionally, the release mode may have slower times than debug mode due to release mode possibly auto-vectorizing the C code. When calling the assembly implementations, this may slow down the CPU clock resulting in a slower speed up factor.
