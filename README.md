@@ -115,6 +115,8 @@ put project desc and specs here
       ![image](https://github.com/user-attachments/assets/7516ce33-e1ef-45b7-a30b-da0773a8a6cc)
 
 ### II. Comparative table of execution time and analysis of the performance of different kernels
+- A device with the following specs was used to run each implementation of the dot product formula.
+- ![5d663dbf-c72b-405b-bce6-a8d6706a2ae1](https://github.com/user-attachments/assets/d3342ce8-d38e-4319-863d-fbce980a0116)
 
 Debug average execution times
 
