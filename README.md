@@ -160,9 +160,19 @@ Release speed factor
 - The implementation of the dot product in SIMD XMM and SIMD YMM required special consideration. This was the inclusion of being able to handle vector lengths that were not multiples of 4 and multiples of 8 for XMM and YMM respectively. Due to XMM handling 4 elements at a time and YMM handling 8 elements at a time, an issue may occur in which the remaining elements at the end of the vector may not be one of these respective multiples. To address this, additional branches were included to handle this test case in which the remaining elements would be handled using a regular x86-64. For SIMD XMM, the remaining elements could possibly range from 1-3 elements while SIMD YMM would range from 1-7 elements.
 
 ### III. C Program 
+* Dot Product Computation <br/>
+  ![image](https://github.com/user-attachments/assets/dc08c092-97ee-4ea5-99dc-320cf36b5a22)
+  <br/>
+  Used a for loop that goes through each element of both vectors and multiplies the values of both vectors. The product is then added to sdot. This loops until it goes through all elements.
+<br/>
+   Since the C program is the one that will be calling all kernels and it is required to run it at least 30 times, each function that calls the kernel is enclosed in a for loop that calls the function, checks if the assembly language computed the dot product correctly, and records the execution time of that specific run. Sample code block is shown below.
+![image](https://github.com/user-attachments/assets/3890ad62-609e-4fb9-9cfa-b41d3a8f57e6)
+<br/>
+* Error Checking <br/>
+  ![image](https://github.com/user-attachments/assets/8d0c45ca-b4f8-47c0-9546-7bedfdd0cf19)
+  <br/>
+  The error checkers of each kernel is found in the c program. It compares the final dot product value of the kernel with the error checker's answer. If both are equal then it prints out that the program is correct, else it will print out that the program is incorrect.
 
-* How to run the program
-* Step-by-step bullets
 
 ### IV. x86-64 Program
 
